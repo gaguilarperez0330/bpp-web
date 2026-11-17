@@ -1,0 +1,96 @@
+---
+layout: layouts/base.njk
+bodyClass: page-project
+---
+{%- set nav = collections.projects | neighbours(page.url) %}
+<article class="project">
+  <header class="project-hero wrap">
+    <p class="eyebrow" data-reveal><a href="/photography-projects/">Work</a> · {{ kind }} · {{ year }}</p>
+    <h1 class="project-hero__title" data-split>{{ title }}<span class="punctum">.</span></h1>
+    {%- if translation %}<p class="project-hero__translation" data-reveal>{{ translation }}</p>{% endif %}
+  </header>
+
+  <figure class="project-cover wrap">
+    {% image hero, hero_alt, "100vw", "", "eager", "media--wide", hero_focus %}
+  </figure>
+
+  <section class="project-intro wrap">
+    {%- if epigraph %}
+    <figure class="epigraph" data-reveal>
+      <blockquote>“{{ epigraph }}”</blockquote>
+      <figcaption>{{ epigraph_author }}</figcaption>
+    </figure>
+    {%- endif %}
+    <div class="prose" data-reveal>{{ content | safe }}</div>
+  </section>
+
+  <section class="project-gallery" aria-label="Selected images">
+    {%- for ch in chapters %}
+    <div class="chapter wrap">
+      {%- if ch.name %}<h2 class="chapter__name" data-split>{{ ch.name }}</h2>{% endif %}
+      {#- three to a row; when the count does not divide by three, the first two or four images go two to a row and larger,
+          so no image is ever left alone at the end of a row -#}
+      {%- set n = ch.images | length %}
+      {%- set lead = 4 if n % 3 == 1 and n > 1 else (2 if n % 3 == 2 else 0) %}
+      <div class="gallery gallery--{{ 'single' if n == 1 else 'grid' }}">
+        {%- for img in ch.images %}
+        <button class="gallery__item{% if loop.index <= lead %} gallery__item--large{% endif %}" type="button" data-lightbox-open data-full="{{ img.src }}" data-caption="{{ title }}{% if ch.name %}, {{ ch.name }}{% endif %}" aria-label="Open image larger: {{ img.alt }}">
+          {% image img.src, img.alt, "(min-width: 900px) 33vw, 50vw", "", "lazy", "media--zoom" %}
+        </button>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <section class="project-notes wrap">
+    {%- if reviews %}
+    <div class="project-notes__block">
+      <h2 class="small-title">Selected reviews</h2>
+      {%- for r in reviews %}
+      <figure class="review" data-reveal>
+        <blockquote>“{{ r.quote }}”</blockquote>
+        <figcaption>{{ r.author }}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    <aside class="project-notes__side">
+      {%- if credits %}
+      <h2 class="small-title">Credits</h2>
+      <dl class="credits">
+        {%- for c in credits %}<div><dt>{{ c.role }}</dt><dd>{{ c.name }}</dd></div>{% endfor %}
+      </dl>
+      {%- endif %}
+      {%- if exhibited %}
+      <h2 class="small-title">Exhibited</h2>
+      <ul class="plain-list">{% for e in exhibited %}<li>{{ e }}</li>{% endfor %}</ul>
+      {%- endif %}
+      {%- if features %}
+      <h2 class="small-title">Publication features</h2>
+      <ul class="plain-list">{% for f in features %}<li>{% if f.link %}<a href="{{ f.link }}" target="_blank" rel="noopener">{{ f.text }}</a>{% else %}{{ f.text }}{% endif %}</li>{% endfor %}</ul>
+      {%- endif %}
+      <a class="link-arrow" href="/press/">View press</a>
+    </aside>
+  </section>
+
+  {%- if installation %}
+  <section class="section band band--lace" aria-labelledby="installation-title">
+    <div class="wrap">
+      <h2 id="installation-title" class="section-title section-title--small" data-split>On the wall</h2>
+      <div class="installation">
+        {%- for img in installation %}
+        <button class="installation__item" type="button" data-lightbox-open data-full="{{ img.src }}" data-caption="{{ img.alt }}" aria-label="Open image larger: {{ img.alt }}">
+          {% image img.src, img.alt, "(min-width: 900px) 25vw, 50vw", "", "lazy", "media--zoom" %}
+        </button>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+
+  <nav class="project-pager wrap" aria-label="More projects">
+    {%- if nav.prev %}<a class="project-pager__link" href="{{ nav.prev.url }}"><span>Previous</span>{{ nav.prev.data.title }}</a>{% else %}<span></span>{% endif %}
+    {%- if nav.next %}<a class="project-pager__link project-pager__link--next" href="{{ nav.next.url }}"><span>Next</span>{{ nav.next.data.title }}</a>{% endif %}
+  </nav>
+</article>

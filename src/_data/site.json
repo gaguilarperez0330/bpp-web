@@ -1,0 +1,29 @@
+{
+  "name": "Beatriz Perez",
+  "full_name": "Beatriz Perez Photography",
+  "role": "Fine art and documentary photographer",
+  "url": "https://www.beatrizperezphotography.com",
+  "description": "Beatriz Perez is a London-based fine art and documentary photographer exploring womanhood through cultural identity, memory and the body.",
+  "og_image": "/images/cvad/n-halo.jpg",
+  "email": "beatrizperezphotography@gmail.com",
+  "instagram": "https://www.instagram.com/beatrizperezphotography/",
+  "instagram_handle": "@beatrizperezphotography",
+  "linkedin": "https://www.linkedin.com/in/beatriz-perez-photography/",
+  "nav": [
+    { "label": "Work", "url": "/photography-projects/" },
+    { "label": "Exhibitions", "url": "/exhibitions/" },
+    { "label": "Press", "url": "/press/" },
+    { "label": "Prints", "url": "/prints/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Contact", "url": "/contact/" }
+  ],
+  "newsletter": {
+    "title": "Join the collectors' list",
+    "text": "Early access to new work, exhibitions and limited-edition prints. Occasional updates. No spam."
+  },
+  "footer_quote": {
+    "text": "Photography does not merely reflect reality, it constructs it.",
+    "author": "Susan Sontag"
+  },
+  "trees": "435 trees planted in the Amazon rainforest through One Tree Planted, and growing"
+}

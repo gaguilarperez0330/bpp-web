@@ -1,0 +1,17 @@
+{
+  "name": "beatriz-perez-photography-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Beatriz Perez Photography website — Eleventy + Decap CMS, deployed on Netlify",
+  "scripts": {
+    "start": "eleventy --serve --port=8081",
+    "build": "eleventy",
+    "cms": "decap-server",
+    "preview": "eleventy && node scripts/local-preview.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2",
+    "decap-server": "3.11.3"
+  },
+  "type": "module"
+}

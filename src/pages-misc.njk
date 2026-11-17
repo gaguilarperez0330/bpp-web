@@ -1,0 +1,19 @@
+---
+pagination:
+  data: miscPages
+  size: 1
+  alias: mp
+miscPages:
+  - { url: "/thank-you/", title: "Thank you", heading: "Thank you", text: "Your message has arrived. Beatriz will reply as soon as she can.", noindex: true }
+  - { url: "/404.html", title: "Page not found", heading: "This page has moved", text: "The page you were looking for is not here. It may have moved when the site was redesigned.", noindex: true }
+permalink: "{{ mp.url }}"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ mp.title }}"
+  noindex: "{{ mp.noindex }}"
+---
+<header class="page-head page-head--short wrap">
+  <h1 class="page-title" data-split>{{ mp.heading }}<span class="punctum">.</span></h1>
+  <p class="page-head__text">{{ mp.text }}</p>
+  <div class="btn-row"><a class="btn btn--solid" href="/">Back to home</a><a class="btn" href="/photography-projects/">See the work</a></div>
+</header>

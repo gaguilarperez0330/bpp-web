@@ -1,0 +1,26 @@
+{#- each page can bring its own closing quote, as on the old site: front matter footerQuote, or quoteFrom naming a data file -#}
+{%- set pageData = { exhibitions: exhibitions, press: press, prints: prints, about: about, cv: cv, contact: contact } -%}
+{%- set q = footerQuote or (pageData[quoteFrom].quote if quoteFrom else null) or site.footer_quote -%}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-sign">
+      {% include "partials/monogram.njk" %}
+      <figure class="footer-quote" data-reveal>
+        <blockquote>“{{ q.text }}”</blockquote>
+        <figcaption>{{ q.author }}</figcaption>
+      </figure>
+    </div>
+    <div class="site-footer__row">
+      <a class="logo" href="/"><span class="logo__name">Beatriz Perez<small>Photography</small></span></a>
+      <ul class="site-footer__links">
+        {%- for item in site.nav %}<li><a href="{{ item.url }}">{{ item.label }}</a></li>{% endfor %}
+      </ul>
+      <ul class="site-footer__links">
+        <li><a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      </ul>
+    </div>
+    <p class="site-footer__small"><span>© {{ build.year }} Beatriz Perez. All images are the copyright of the artist.</span><span>{{ site.trees }}.</span></p>
+  </div>
+</footer>

@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: About
+permalink: /about/
+quoteFrom: about
+seo_description: Beatriz Perez is a London-based fine art and documentary photographer exploring womanhood through cultural identity, memory and the body.
+---
+<section class="about-hero wrap">
+  <div class="about-hero__text">
+    <p class="about-teaser__hello">{{ about.hello }}</p>
+    <h1 class="triad triad--xl" data-split>{% for l in about.lines %}<span>{{ l }}<span class="punctum">.</span></span>{% endfor %}</h1>
+    <p class="lead" data-reveal>{{ about.lead }}</p>
+    <div class="btn-row" data-reveal><a class="btn btn--solid" href="/beatriz-perez-cv/">View CV</a><a class="btn" href="/contact/">Get in touch</a></div>
+  </div>
+  <div class="about-hero__image">{% image about.image, about.image_alt, "(min-width: 900px) 40vw, 100vw", "", "eager", "media--portrait" %}</div>
+</section>
+
+{#- the story as chapters that open one by one, so the page never shows a wall of text -#}
+<section class="section about-story" aria-labelledby="story-title">
+  <div class="wrap about-story__grid">
+    <div class="about-story__intro">
+      <p class="eyebrow">The story</p>
+      <h2 id="story-title" class="section-title" data-split>From a personal passion to a practice<span class="punctum">.</span></h2>
+      <figure class="about-story__pull" data-reveal>
+        <blockquote>{{ (about.sections | selectattr("pull") | first).pull }}</blockquote>
+      </figure>
+    </div>
+    <div class="chapters" data-chapters>
+      {%- for s in about.sections %}
+      <details class="chapter-fold"{% if loop.first %} open{% endif %}>
+        <summary><span class="chapter-fold__num">{{ "0" if loop.index < 10 }}{{ loop.index }}</span><span class="chapter-fold__title">{{ s.title }}</span><span class="chapter-fold__toggle" aria-hidden="true"></span></summary>
+        <div class="chapter-fold__body">
+          <div class="prose">{{ s.text | md | safe }}</div>
+          {%- if s.link %}<a class="link-arrow" href="{{ s.link }}" target="_blank" rel="noopener">{{ s.link_label }}</a>{% endif %}
+        </div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

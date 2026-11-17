@@ -1,0 +1,37 @@
+{
+  "hello": "¡Hola! I’m Beatriz",
+  "lines": ["Spanish-born", "Venezuelan-made", "London-based"],
+  "lead": "I am a fine art and documentary photographer exploring womanhood through themes of cultural identity, memory and the body. My work combines conceptual staging and documentary approaches to construct visual narratives, drawing on symbolism, personal history and lived experiences.",
+  "image": "/images/about/portrait.jpg",
+  "image_alt": "Portrait of the photographer Beatriz Perez",
+  "sections": [
+    {
+      "title": "Where it began",
+      "text": "Motherhood was the catalyst that first drew me to photography. It heightened my awareness of how memory, identity and family histories shape who we are, leading me to retrace my own roots and the women whose stories formed me.\n\nFrom this personal starting point, my work expanded into a broader exploration of women’s experiences across cultures, as caregivers, migrants and guardians of both community and land, engaging with themes that resonate closely with ecofeminist thought."
+    },
+    {
+      "title": "Background",
+      "text": "I was born in Spain, raised in Venezuela, re-trained as a photographer in Europe, and now live in London. These cross-cultural experiences shape both my worldview and my photographic language.\n\nWorking across cultures has developed a strong sense of adaptability, cultural awareness and emotional sensitivity, qualities that inform how I approach the people and narratives within my work. My practice reflects these lived experiences, exploring identity as something fluid, layered and constantly evolving."
+    },
+    {
+      "title": "Path into photography",
+      "text": "Photography emerged as a turning point in my life, transforming a personal passion into a professional practice.\n\nI trained at WAES (BTEC Art & Design) and later completed an MA in Photographic Studies at the University of Westminster. Alongside my studies, I gained experience through roles at LA Noble Gallery and Camden Arts Centre, and by assisting Magnum photographer Chris Steele-Perkins."
+    },
+    {
+      "title": "Practice",
+      "pull": "Photography gives me a voice to question, reflect and reveal.",
+      "text": "My practice moves fluidly between fine art and creative documentary, grounded in research and visual storytelling. I am particularly drawn to women’s experiences: the spaces they inhabit, the objects they hold and the cultural narratives that shape their identities.\n\nThrough this work, I create images that resonate emotionally while inviting reflection on representation, memory and belonging."
+    },
+    {
+      "title": "ART from HEART CIC",
+      "text": "Alongside my artistic practice, I have a strong background in business and gallery management.\n\nThis dual perspective led me to co-found ART from HEART CIC in 2019, an award-winning organisation that uses artivism to champion women’s rights and environmental causes through exhibitions and public programmes.\n\nThis work extends my commitment to using photography and art as tools for dialogue, visibility and social impact.",
+      "link": "https://www.artfromheart.co.uk",
+      "link_label": "Visit ART from HEART"
+    },
+    {
+      "title": "Behind the lens",
+      "text": "Beyond photography, I am a writer with an eye for design, a creative and commercial mindset, and a strong sense of humour. As writer Brandon A. Trean puts it, “A writer is simply a photographer of thoughts”, a sentiment that resonates deeply with my practice.\n\nWhen I am not shooting, managing an event or connecting with people, you will likely find me reading, enjoying a good coffee, taking a Zumba class or visiting my hairdresser, staying true to my Latin roots. Always in the mood for travelling and embracing new adventures."
+    }
+  ],
+  "quote": { "text": "Stories are the perfect skin of time.", "author": "Victor Masayesva Jr." }
+}

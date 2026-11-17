@@ -1,0 +1,58 @@
+{
+  "title": "In the spotlight",
+  "intro": "Captured, published, recognised. Features, awards, catalogues and media coverage of Beatriz Perez’s work.",
+  "quote": { "text": "Photography takes an instant out of time, altering life by holding it still.", "author": "Dorothea Lange" },
+  "groups": [
+    {
+      "name": "Features and awards",
+      "items": [
+        { "title": "DOCU Magazine, Special Edition", "source": "Curated by Tuomas Koskialho", "date": "January 2026", "text": "A special edition dedicated to Cuerpo Vestido, Alma Desnuda.", "image": "/images/press/docu.jpg", "link": "https://www.blurb.co.uk/books/12736945-beatriz-perez" },
+        { "title": "Simone Awards Laureates 2025", "source": "Château de Pommard, France", "date": "2025", "text": "Awarded with Judit Prieto for ART from HEART’s work in art, sustainability and women’s empowerment. A distinction inspired by the legacy of Simone Veil.", "image": "/images/press/simone.jpg", "link": "https://www.artfromheart.co.uk/media" },
+        { "title": "Women in the Arts", "source": "Women United Art Magazine, Issue XII", "date": "Autumn 2025", "text": "Recognised for leadership in socially engaged ecofeminist practice as co-founder of ART from HEART CIC.", "image": "/images/press/wuam.jpg", "link": "/files/women-in-the-arts-2025.pdf" },
+        { "title": "Arts Organisation of the Year 2023/24", "source": "Corporate LiveWire Prestige Awards", "date": "2023", "text": "London and South East England, awarded to ART from HEART CIC for its dedication to artivism and excellence in the arts.", "image": "/images/press/prestige.jpg", "link": "https://www.artfromheart.co.uk/media" },
+        { "title": "I Am Not Famous Because I Am Not Dead", "source": "ArtisTank, Issue 2", "date": "December 2017", "text": "Featured artist.", "image": "/images/press/artistank.jpg" },
+        { "title": "Featured artist", "source": "I Love Talent", "date": "November 2014", "text": "", "image": "/images/press/ilovetalent.jpg" },
+        { "title": "MISShapes", "source": "Source Photographic Review, Source Online", "date": "September 2013", "text": "Graduate photography online, University of Westminster MA Photographic Studies.", "image": "/images/press/source.jpg", "link": "https://www.source.ie/graduate/2013/weststudma/weststudma_student_11_42_42_29-08-13/weststudma_student_11_42_42_29-08-13.php" }
+      ]
+    },
+    {
+      "name": "Publications",
+      "items": [
+        { "title": "ART from HEART: Artivism in Action", "source": "A.R.T. Online Magazine", "date": "2023", "text": "Written by Beatriz Perez.", "image": "/images/press/art-mag.jpg", "link": "https://www.artistsrespondingto.co.uk/post/art-from-heart-artivism-in-action" },
+        { "title": "New Trends for a Successful Online Portfolio in 2021", "source": "Now Tell Me Zine, Issue 1, edited by Holly Houlton", "date": "November 2021", "text": "Written by Beatriz Perez.", "image": "/images/press/zine.jpg", "link": "https://tinyurl.com/NTMZine-1" }
+      ]
+    },
+    {
+      "name": "Exhibition catalogues",
+      "items": [
+        { "title": "TERRA", "source": "Espacio Gallery, London, curated by ART from HEART CIC", "date": "2022", "text": "", "image": "/images/press/cat-terra.jpg", "link": "https://www.artfromheart.co.uk/terra-exhibition" },
+        { "title": "Utopia", "source": "ECOFeminism Festival, The Art Pavilion, London", "date": "2021", "text": "", "image": "/images/press/cat-utopia.jpg", "link": "https://www.artfromheart.co.uk/ecofeminism-festival-exhibitions" },
+        { "title": "We Grow into the Forest", "source": "The Art Pavilion, London", "date": "2019", "text": "", "image": "/images/press/cat-wgitf.jpg", "link": "https://exhibitions.weebly.com/uploads/1/2/5/8/1258901/low_res_wgitf_catalogue_20190308.pdf" },
+        { "title": "In a Country Far, Far Away", "source": "The Art Pavilion, London", "date": "2018", "text": "Featuring The Weeping Woman.", "image": "/images/press/cat-faraway.jpg", "link": "https://exhibitions.weebly.com/uploads/1/2/5/8/1258901/country_far_away_catalogue_low_res_20180228.pdf" },
+        { "title": "In Einem Fernen, Fernen Land", "source": "Deutsches Märchen- und Wesersagenmuseum, Bad Oeynhausen", "date": "2018", "text": "Featuring The Weeping Woman. In German.", "image": "/images/press/cat-fernen.jpg" },
+        { "title": "MAPS Degree Show", "source": "Ambika P3, University of Westminster, London", "date": "2013", "text": "With essays by Diane Smith, David Bate, Charlotte Cotton and Sue Steward.", "image": "/images/press/cat-maps.jpg" },
+        { "title": "Renaissance Photography Prize", "source": "Mall Galleries, London", "date": "2012", "text": "", "image": "/images/press/cat-renaissance.jpg", "link": "https://www.facebook.com/RenaissancePhotographyPrize/" }
+      ]
+    },
+    {
+      "name": "Media",
+      "items": [
+        { "title": "Female game-changers in the events industry", "source": "Ticketpass Blog", "date": "", "text": "", "image": "/images/press/ticketpass.jpg", "link": "https://ticketpass.org/articles/female-game-changers-in-the-events-industry" },
+        { "title": "The New Londoners", "source": "Spiegel Online", "date": "", "text": "Chris Steele-Perkins’ project on London families, published in Spiegel Online.", "image": "/images/press/spiegel.jpg", "link": "https://www.spiegel.de/panorama/gesellschaft/london-fotograf-zeigt-vielfalt-der-metropole-a-1254477.html" },
+        { "title": "The New Londoners", "source": "Magnum Photos", "date": "", "text": "Featured as subject and collaborator in the long-term documentary project by Chris Steele-Perkins.", "image": "/images/press/magnum.jpg", "link": "https://www.magnumphotos.com/arts-culture/society-arts-culture/chris-steele-perkins-london-family/" },
+        { "title": "Volkslied erzählt von Sklaverei", "source": "Westfalen-Blatt online", "date": "May 2018", "text": "In Einem Fernen, Fernen Land.", "image": "/images/press/westfalen-1.jpg", "link": "https://m.westfalen-blatt.de/OWL/Kreis-Minden-Luebbecke/Bad-Oeynhausen/3276044-Ausstellung-im-Maerchen-und-Wesersagenmuseum-Bad-Oeynhausen-vereint-Kulturen-Volkslied-erzaehlt-von-Sklaverei" },
+        { "title": "Weltreisende und Lyriker", "source": "Westfalen-Blatt", "date": "2018", "text": "In Einem Fernen, Fernen Land.", "image": "/images/press/westfalen-2.jpg" },
+        { "title": "Wenn Kunst Grenzen überwindet", "source": "Westfalen-Blatt", "date": "2018", "text": "In Einem Fernen, Fernen Land.", "image": "/images/press/westfalen-3.jpg" },
+        { "title": "Top 5 exhibitions in East London", "source": "Whitechapel Gallery, First Thursdays", "date": "March 2018", "text": "In a Country Far, Far Away.", "image": "/images/press/whitechapel.jpg" },
+        { "title": "In a Country Far, Far Away", "source": "Tower Hamlets Arts", "date": "2018", "text": "", "image": "/images/press/towerhamlets.jpg", "link": "https://www.towerhamletsarts.org.uk/?cid=66187" },
+        { "title": "Colour Assembly interview", "source": "Camden Community Radio", "date": "2017", "text": "", "image": "/images/press/camden-radio.jpg" },
+        { "title": "Colour Assembly pop-up", "source": "Kentishtowner", "date": "2017", "text": "", "image": "/images/press/kentishtowner.jpg", "link": "https://www.kentishtowner.co.uk/2017/01/12/must-pizza-jam-dry-cocktails-pop-art/" },
+        { "title": "Colour Assembly pop-up", "source": "Ham & High", "date": "2017", "text": "", "image": "/images/press/hamhigh.jpg" },
+        { "title": "Colour Assembly pop-up", "source": "Love Camden", "date": "2017", "text": "", "image": "/images/press/lovecamden.jpg" },
+        { "title": "Testbed: Market to Market", "source": "Wherevent", "date": "2016", "text": "", "image": "/images/press/wherevent.jpg", "link": "https://www.wherevent.com/detail/Camden-Arts-Centre-Testbed-Market-to-Market" },
+        { "title": "Testbed: Market to Market", "source": "Love Camden", "date": "2016", "text": "", "image": "/images/press/lovecamden-2.png", "link": "https://camdenartcentre.org/whats-on/testbed-market-to-market" },
+        { "title": "Testbed: Market to Market", "source": "Camden Arts Centre", "date": "2016", "text": "A participatory exhibition.", "image": "/images/press/testbed.jpg", "link": "https://camdenartcentre.org/whats-on/testbed-market-to-market" }
+      ]
+    }
+  ]
+}

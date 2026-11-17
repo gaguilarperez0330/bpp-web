@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Prints
+seo_title: Limited edition fine art prints | Beatriz Perez Photography
+permalink: /prints/
+quoteFrom: prints
+seo_description: Limited-edition fine art photographic prints by Beatriz Perez, signed and numbered, with a certificate of authenticity. Each sale supports One Tree Planted.
+---
+<header class="page-head wrap">
+  <p class="eyebrow" data-reveal>Signed · numbered · certificate of authenticity</p>
+  <h1 class="page-title" data-split>{{ prints.title }}<span class="punctum">.</span></h1>
+  <div class="page-head__cols" data-reveal>
+    <p>{{ prints.intro }}</p>
+    <p>{{ prints.intro_2 }}</p>
+  </div>
+  <p class="impact-note" data-reveal>{{ prints.impact }}</p>
+</header>
+
+{%- for s in prints.series %}
+<section class="section{% if loop.index is even %} band band--red{% endif %}" aria-labelledby="series-{{ loop.index }}">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="section-title section-title--small" id="series-{{ loop.index }}" data-split>{{ s.name }}</h2>
+      <p class="section-head__text" data-reveal>{{ s.text }}</p>
+      <a class="link-arrow" href="{{ s.project }}">See the series</a>
+    </header>
+    <div class="print-grid print-grid--page">
+      {%- for it in s.items %}{% include "partials/print-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+<section class="section wrap enquire" data-reveal>
+  <h2 class="section-title section-title--small">{{ prints.enquiry }}</h2>
+  <div class="btn-row"><a class="btn btn--solid" href="/contact/">Enquire about a print</a><a class="btn" href="mailto:{{ site.email }}?subject=Print%20enquiry">Email Beatriz</a></div>
+</section>

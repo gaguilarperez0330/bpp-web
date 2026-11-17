@@ -1,0 +1,32 @@
+{
+  "title": "Limited edition fine art prints",
+  "intro": "A curated selection of limited-edition photographic prints, produced to museum-quality standards for longevity and exceptional print fidelity. Each work is issued in carefully considered editions and is signed, numbered, dated and accompanied by a certificate of authenticity.",
+  "intro_2": "Each photograph is conceived as a collectable object, offering the opportunity to live with an image that inspires and holds presence.",
+  "impact": "A portion of each print supports women’s empowerment initiatives and global reforestation through One Tree Planted, extending each acquisition into a wider commitment to environmental care and social impact.",
+  "enquiry": "For enquiries, editions and pricing, please get in touch.",
+  "quote": { "text": "A collection to which nothing can be added and from which nothing can be removed is, in fact, dead!", "author": "Sigmund Freud, quoted by Robert Neuberger in Art Tribal, Spring 2003" },
+  "series": [
+    {
+      "name": "Cuerpo Vestido, Alma Desnuda",
+      "text": "Fine art photographic series exploring ritual, identity and symbolic representations of womanhood.",
+      "project": "/photography-projects/cuerpo-vestido-alma-desnuda/",
+      "items": [
+        { "title": "La Novia, Apple Bouquet", "year": "2025", "image": "/images/cvad/n-bouquet.jpg", "alt": "La Novia holding an apple bouquet", "paper": "Archival pigment print on Canson Baryta", "edition": "Edition of 10 + 2 AP", "size": "100 × 70 cm, unframed", "status": "Available on request" },
+        { "title": "La Quinceañera, Mirror", "year": "2025", "image": "/images/cvad/q-mirror.jpg", "alt": "La Quinceañera holding a mirror with her reflection", "paper": "Archival pigment print on Canson Baryta", "edition": "Edition of 10 + 2 AP", "size": "100 × 70 cm, unframed", "status": "Available on request" },
+        { "title": "La Doña, Unbound Pearls", "year": "2025", "image": "/images/cvad/d-pearls.jpg", "alt": "La Doña with pearls suspended across her face", "paper": "Archival pigment print on Canson Baryta", "edition": "Edition of 10 + 2 AP", "size": "100 × 70 cm, unframed", "status": "Available on request" },
+        { "title": "La Novia, Rosary", "year": "2025", "image": "/images/cvad/rosary-land.jpg", "alt": "Two hands holding a rosary, one in a red glove", "paper": "Archival pigment print on Canson Baryta", "edition": "Edition of 10 + 2 AP", "size": "70 × 100 cm, unframed", "status": "Available on request" }
+      ]
+    },
+    {
+      "name": "MISShapes",
+      "text": "Fine art photographic series exploring the female body as a landscape of shapes and textures.",
+      "project": "/photography-projects/misshapes/",
+      "items": [
+        { "title": "Thigh Gap", "year": "2013", "image": "/images/mis/red-legs.jpg", "alt": "Red-toned legs in a sculptural composition", "paper": "Lambda C-type print on Fujiflex SuperGloss (Fuji Crystal Archive Paper)", "edition": "Edition of 10 + 1 AP", "size": "61 × 51 cm, unframed", "status": "Available on request" },
+        { "title": "Gluteal Curve", "year": "2013", "image": "/images/mis/gluteal.jpg", "alt": "Female body in fishnet stockings forming graphic shapes", "paper": "Lambda C-type print on Fujiflex SuperGloss (Fuji Crystal Archive Paper)", "edition": "Edition of 10 + 2 AP", "size": "61 × 51 cm, unframed", "status": "Available on request" },
+        { "title": "Ribcage", "year": "2013", "image": "/images/mis/ribcage.jpg", "alt": "Female ribcage creating geometric shadows through sculptural lighting", "paper": "Lambda C-type print on Fujiflex SuperGloss (Fuji Crystal Archive Paper)", "edition": "Edition of 10 + 2 AP", "size": "61 × 51 cm, unframed", "status": "Available on request" },
+        { "title": "Clavicle", "year": "2013", "image": "/images/mis/clavicle.jpg", "alt": "Study of a female clavicle in red light", "paper": "Lambda C-type print on Fujiflex SuperGloss (Fuji Crystal Archive Paper)", "edition": "Edition of 10 + 2 AP", "size": "76 × 102 cm, unframed", "status": "Available on request" }
+      ]
+    }
+  ]
+}

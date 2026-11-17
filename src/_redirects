@@ -1,0 +1,11 @@
+# Redirects from the previous Squarespace website. Format: old-path  new-path  status
+# Single event pages are folded into the exhibitions list.
+/exhibitions/*                /exhibitions/                    301
+/cart                         /prints/                         301
+/work                         /photography-projects/           301
+/cv                           /beatriz-perez-cv/               301
+
+# PDFs previously served by Squarespace
+/s/2026-Beatriz-Perez-Artist-CV.pdf                 /files/beatriz-perez-cv-2026.pdf     301
+/s/Women-In-The-Arts-ART-from-HEART-CIC.pdf         /files/women-in-the-arts-2025.pdf    301
+/s/ART-FROM-HEART-2cdd.pdf                          /files/women-in-the-arts-2025.pdf    301

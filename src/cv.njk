@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: CV
+permalink: /beatriz-perez-cv/
+quoteFrom: cv
+seo_description: "CV of Beatriz Perez, fine art and documentary photographer: exhibitions, awards, publications, education and experience."
+---
+<header class="page-head wrap">
+  <p class="eyebrow" data-reveal>Beatriz Perez · Fine art and documentary photographer</p>
+  <h1 class="page-title" data-split>{{ cv.title }}<span class="punctum">.</span></h1>
+  <p class="page-head__text" data-reveal>{{ cv.tagline }}</p>
+  <div class="btn-row" data-reveal><a class="btn btn--solid" href="{{ cv.pdf }}" target="_blank" rel="noopener">Download CV (PDF)</a></div>
+</header>
+
+<section class="wrap cv-intro">
+  <div><h2 class="small-title">Biography</h2><div class="prose" data-reveal>{{ cv.biography | md | safe }}</div></div>
+  <div><h2 class="small-title">Statement</h2><div class="prose" data-reveal>{{ cv.statement | md | safe }}</div></div>
+</section>
+
+<section class="section wrap cv-lists">
+  <nav class="jump" aria-label="CV sections">{% for l in cv.lists %}<a href="#{{ l.name | slugify }}">{{ l.name }}</a>{% endfor %}</nav>
+  {%- for l in cv.lists %}
+  <div class="cv-block" id="{{ l.name | slugify }}">
+    <h2 class="cv-block__title">{{ l.name }}</h2>
+    <ol class="cv-list">
+      {%- for it in l.items %}<li><span class="cv-list__year">{{ it.year }}</span><span>{{ it.text }}</span></li>{% endfor %}
+    </ol>
+  </div>
+  {%- endfor %}
+  <p class="impact-note">{{ site.trees }}.</p>
+</section>

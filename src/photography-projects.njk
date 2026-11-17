@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: Work
+permalink: /photography-projects/
+bodyClass: page-work
+footerQuote: { text: "Inhale possibility, exhale creativity.", author: "Laura Jaworski" }
+seo_description: Photography projects by Beatriz Perez exploring womanhood, cultural identity, memory and the body through fine art and documentary photography.
+---
+<header class="page-head wrap">
+  <p class="eyebrow" data-reveal>Photography projects</p>
+  <h1 class="page-title" data-split>Work<span class="punctum">.</span></h1>
+  <p class="page-head__text" data-reveal>{{ home.projects_text }}</p>
+</header>
+
+<section class="work-list wrap">
+  {%- for p in collections.projects %}
+  {%- set d = p.data %}
+  {#- each cover is shown whole, never cropped, centred on the page with the text beneath -#}
+  <article class="work-item">
+    <a class="work-item__image" href="{{ p.url }}" tabindex="-1" aria-hidden="true">{% image d.cover, d.cover_alt, "(min-width: 900px) 60vw, 100vw", "", ("eager" if loop.first else "lazy"), "media--whole" %}</a>
+    <div class="work-item__text">
+      <p class="eyebrow">{{ d.kind }} · {{ d.year }}</p>
+      <h2 class="work-item__title" data-split><a href="{{ p.url }}">{{ d.title }}</a></h2>
+      {%- if d.translation %}<p class="home-project__translation">{{ d.translation }}</p>{% endif %}
+      <p data-reveal>{{ d.summary }}</p>
+      <a class="link-arrow" href="{{ p.url }}">View project</a>
+    </div>
+  </article>
+  {%- endfor %}
+</section>

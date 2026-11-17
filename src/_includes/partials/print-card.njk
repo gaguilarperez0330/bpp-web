@@ -1,0 +1,11 @@
+{#- one print as a framed object with a museum-label caption; expects `it` -#}
+{%- set dim = it.image | imageSize -%}
+<figure class="print-card" data-reveal>
+  <button class="print-card__frame{% if dim and dim.w > dim.h %} is-landscape{% endif %}" type="button" data-lightbox-open data-full="{{ it.image }}" data-caption="{{ it.title }}, {{ it.year }}" aria-label="Open {{ it.title }} larger">
+    {% image it.image, it.alt, "(min-width: 900px) 22vw, 45vw", "", "lazy", "media--print" %}
+  </button>
+  <figcaption class="label">
+    <span class="label__title"><em>{{ it.title }}</em>, {{ it.year }}</span>
+    <span class="label__meta">{{ it.paper }}<br>{{ it.size }} · <b>{{ it.edition }}</b></span>
+  </figcaption>
+</figure>

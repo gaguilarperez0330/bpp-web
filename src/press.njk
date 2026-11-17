@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Press
+permalink: /press/
+quoteFrom: press
+seo_description: Press features, awards, publications and exhibition catalogues featuring the photographer Beatriz Perez.
+---
+<header class="page-head wrap">
+  <p class="eyebrow" data-reveal>Captured, published, recognised</p>
+  <h1 class="page-title" data-split>{{ press.title }}<span class="punctum">.</span></h1>
+  <p class="page-head__text" data-reveal>{{ press.intro }}</p>
+  <nav class="jump" aria-label="Press sections">
+    {%- for g in press.groups %}<a href="#{{ g.name | slugify }}">{{ g.name }}</a>{% endfor %}
+  </nav>
+</header>
+
+{%- for g in press.groups %}
+<section class="section press-group{% if loop.index is even %} band band--red{% endif %}" id="{{ g.name | slugify }}" aria-labelledby="pg-{{ loop.index }}">
+  <div class="wrap">
+    <h2 class="section-title section-title--small" id="pg-{{ loop.index }}" data-split>{{ g.name }}</h2>
+    <div class="press-grid">
+      {%- for it in g.items %}
+      <article class="press-card" data-reveal>
+        <button class="press-card__sheet" type="button" data-lightbox-open data-full="{{ it.image }}" data-caption="{{ it.title }}, {{ it.source }}" aria-label="Open the tearsheet for {{ it.title }}">
+          {% image it.image, "Tearsheet: " + it.title + ", " + it.source, "(min-width: 900px) 22vw, 45vw", "", "lazy", "media--sheet" %}
+        </button>
+        <p class="press-card__meta">{{ it.source }}{% if it.date %} · {{ it.date }}{% endif %}</p>
+        <h3 class="press-card__title">{{ it.title }}</h3>
+        {%- if it.text %}<p class="press-card__text">{{ it.text }}</p>{% endif %}
+        {%- if it.link %}<a class="link-arrow" href="{{ it.link }}"{% if it.link | isExternal %} target="_blank" rel="noopener"{% endif %}>{{ "Read the PDF" if ".pdf" in it.link else "Read more" }}</a>{% endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}

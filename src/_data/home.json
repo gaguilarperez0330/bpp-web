@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "eyebrow": "Fine art and documentary photographer · London",
+    "title": "Womanhood, through *identity,* memory and the body",
+    "text": "Beatriz Perez is a London-based fine art and documentary photography artist whose work explores womanhood through themes of cultural identity, memory and the body. Drawing from personal history and symbolism, her images combine staged and documentary approaches to examine how women are seen, remembered and represented within contemporary photography.",
+    "image": "/images/home/merienda.jpg",
+    "image_alt": "Three generations of women sharing la merienda at a garden table in Spain",
+    "image_focus": "50% 45%",
+    "caption": "La Merienda, Spain"
+  },
+  "projects_title": "Selected projects",
+  "projects_text": "Ongoing photographic explorations of womanhood through conceptual and narrative fine art and documentary photography. Moving between intimacy and performance, the images unfold as visual narratives shaped by cultural memory, symbolic gestures and personal experience.",
+  "about": {
+    "hello": "¡Hola! I'm Beatriz",
+    "lines": ["Spanish-born", "Venezuelan-made", "London-based"],
+    "text": "I am a fine art and documentary photographer exploring womanhood through themes of cultural identity, memory and the body. My work combines conceptual staging with documentary approaches to construct visual narratives, drawing on symbolism, personal history and lived experiences.",
+    "image": "/images/about/portrait.jpg",
+    "image_alt": "Portrait of the photographer Beatriz Perez",
+    "facts": [
+      { "label": "Studied", "value": "MA Photographic Studies, University of Westminster" },
+      { "label": "Assisted", "value": "Chris Steele-Perkins, Magnum Photos" },
+      { "label": "Co-founded", "value": "ART from HEART CIC, 2019" }
+    ]
+  },
+  "praise": [
+    { "quote": "Over the four years it took to finish ‘The New Londoners’, I have had an exceptional level of support from Beatriz Perez.", "name": "Chris Steele-Perkins", "role": "Magnum photographer" },
+    { "quote": "We are really enjoying having you as part of the team. Thank you for your time and commitment, Beatriz.", "name": "Joanna Sawkins", "role": "FoH Manager, Camden Arts Centre" },
+    { "quote": "Beatriz is great. She’s super hardworking, excellent with clients, charming and enthusiastic. She’s also bilingual, which is always a bonus!", "name": "Lottie Davies", "role": "Award-winning photographer and writer" }
+  ],
+  "spotlight": {
+    "title": "In the spotlight",
+    "text": "Selected publications, exhibitions and features",
+    "feature": {
+      "image": "/images/press/wuam.jpg",
+      "image_alt": "Women United Art Magazine, Issue XII, featuring ART from HEART",
+      "label": "Feature · Autumn 2025",
+      "title": "Women United Art Magazine, Issue XII",
+      "text": "Recognised as Women in the Arts for leadership in socially engaged ecofeminist practice as co-founder of ART from HEART CIC.",
+      "link": "/files/women-in-the-arts-2025.pdf",
+      "link_label": "Read the article"
+    }
+  },
+  "prints": {
+    "title": "Fine art prints",
+    "text": "A curated selection of limited-edition fine art photographic prints, produced to museum-quality archival standards. Each print is signed, numbered and accompanied by a certificate of authenticity.",
+    "note": "A portion of every print sale supports reforestation and women’s empowerment initiatives through One Tree Planted."
+  }
+}

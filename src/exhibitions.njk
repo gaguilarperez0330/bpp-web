@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: Exhibitions
+permalink: /exhibitions/
+quoteFrom: exhibitions
+seo_description: Exhibitions, festivals and public presentations featuring the photographic work of Beatriz Perez, in London, Paris, Glasgow and Germany.
+---
+{%- set years = exhibitions.items | byYear %}
+<header class="page-head wrap">
+  <p class="eyebrow" data-reveal>{{ (years | last).year }} to {{ (years | first).year }}</p>
+  <h1 class="page-title" data-split>{{ exhibitions.title }}<span class="punctum">.</span></h1>
+  <p class="page-head__text" data-reveal>{{ exhibitions.intro | replace("the CV", '<a href="/beatriz-perez-cv/">the CV</a>') | safe }}</p>
+  <nav class="jump" aria-label="Jump to a year">
+    {%- for y in years %}<a href="#year-{{ y.year }}" data-open-year>{{ y.year }}</a>{% endfor %}
+  </nav>
+</header>
+
+{#- one drop-down per year, newest first and open -#}
+<section class="wrap exh-archive">
+  {%- for y in years %}
+  <details class="exh-year" id="year-{{ y.year }}"{% if loop.first %} open{% endif %}>
+    <summary>
+      <span class="exh-year__num">{{ y.year }}</span>
+      <span class="exh-year__count">{{ y.items | length }} exhibition{{ "s" if (y.items | length) > 1 }}</span>
+      <span class="exh-year__names">{% for e in y.items %}{{ e.title }}{% if not loop.last %} · {% endif %}{% endfor %}</span>
+      <span class="exh-year__toggle" aria-hidden="true"></span>
+    </summary>
+    {%- for e in y.items %}
+    {%- set st = e.start | status(e.end) %}
+    <article class="exh" id="{{ e.title | slugify }}">
+      <button class="exh__poster" type="button" data-lightbox-open data-full="{{ e.image }}" data-caption="{{ e.title }}, {{ e.venue }}" aria-label="Open the {{ e.title }} poster larger">
+        {% image e.image, e.title + " poster", "(min-width: 900px) 18vw, 40vw", "", "lazy", "media--zoom" %}
+      </button>
+      <div class="exh__when">
+        <span class="exh__dates">{{ e.start | dateRange(e.end) }}</span>
+        {%- if st != "past" %}<span class="tag">{{ "On now" if st == "current" else "Coming soon" }}</span>{% endif %}
+      </div>
+      <div class="exh__body">
+        <h2 class="exh__title">{{ e.title }}</h2>
+        <p class="exh__sub">{{ e.subtitle }}</p>
+        <p class="exh__venue">{{ e.venue }}, {{ e.city }}</p>
+        <p class="exh__text">{{ e.text }}</p>
+        {%- if e.project %}<a class="link-arrow" href="{{ e.project }}">See the work shown</a>{% endif %}
+      </div>
+    </article>
+    {%- endfor %}
+  </details>
+  {%- endfor %}
+</section>

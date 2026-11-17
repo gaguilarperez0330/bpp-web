@@ -1,0 +1,145 @@
+---
+layout: layouts/base.njk
+bodyClass: page-home
+---
+{%- set h = home.hero %}
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>{{ h.eyebrow }}</p>
+    <h1 class="hero__title" data-split>{{ h.title | mdInline | safe }}<span class="punctum">.</span></h1>
+    <div class="hero__foot">
+      <p class="hero__text" data-reveal>{{ h.text }}</p>
+      <div class="btn-row" data-reveal>
+        <a class="btn btn--solid" href="/photography-projects/">View projects</a>
+        <a class="btn" href="/prints/">Fine art prints</a>
+      </div>
+    </div>
+  </div>
+  {#- the photograph opens like an aperture as you scroll: from the width of the text to the full width of the screen -#}
+  <figure class="aperture" data-aperture>
+    <div class="aperture__window">{% image h.image, h.image_alt, "100vw", "", "eager", "media--wide", h.image_focus %}</div>
+    <figcaption class="caption wrap"><span>{{ h.caption }}<span class="punctum">.</span></span><span>Three generations</span></figcaption>
+  </figure>
+</section>
+
+<section class="section" aria-labelledby="projects-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="projects-title" class="section-title" data-split>{{ home.projects_title }}</h2>
+      <p class="section-head__text" data-reveal>{{ home.projects_text }}</p>
+      <a class="link-arrow" href="/photography-projects/">All work</a>
+    </header>
+  </div>
+
+  {%- for p in collections.projects %}
+  {%- set d = p.data %}
+  <article class="home-project home-project--{{ loop.index }}{% if loop.index == 2 %} band band--blush{% endif %}">
+    <div class="wrap home-project__grid">
+      <div class="home-project__text">
+        <p class="eyebrow">{{ d.kind }} · {{ d.year }}</p>
+        <h3 class="home-project__title" data-split><a href="{{ p.url }}">{{ d.title }}</a></h3>
+        {%- if d.translation %}<p class="home-project__translation">{{ d.translation }}</p>{% endif %}
+        <p class="home-project__summary" data-reveal>{{ d.summary }}</p>
+        {%- if d.home_review %}
+        <blockquote class="pull-review" data-reveal>“{{ d.home_review.quote }}”<cite>{{ d.home_review.author }}</cite></blockquote>
+        {%- endif %}
+        <a class="link-arrow" href="{{ p.url }}">View project</a>
+      </div>
+      <div class="home-project__images home-project__images--{{ d.home_images | length }}">
+        {%- for img in d.home_images %}
+        <a class="home-project__image" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+          {% image img.src, img.alt, "(min-width: 900px) 25vw, 50vw", "", "lazy", "media--zoom" %}
+          {%- if img.label %}<span class="home-project__label">{{ img.label }}</span>{% endif %}
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+  </article>
+  {%- endfor %}
+</section>
+
+{%- set a = home.about %}
+<section class="section band band--lace" aria-labelledby="about-title">
+  <div class="wrap about-teaser">
+    <div class="about-teaser__image">{% image a.image, a.image_alt, "(min-width: 900px) 40vw, 100vw", "", "lazy", "media--portrait" %}</div>
+    <div>
+      <p class="about-teaser__hello" id="about-title">{{ a.hello }}</p>
+      <p class="triad" data-split>{% for l in a.lines %}<span>{{ l }}<span class="punctum">.</span></span>{% endfor %}</p>
+      <p class="measure" data-reveal>{{ a.text }}</p>
+      <dl class="facts" data-reveal>
+        {%- for f in a.facts %}<div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endfor %}
+      </dl>
+      <a class="link-arrow" href="/about/">Read more</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="praise-title">
+  <div class="wrap">
+    <header class="section-head section-head--simple"><h2 id="praise-title" class="section-title" data-split>Praise</h2></header>
+    <div class="praise" data-praise>
+      <ul class="praise__names" role="tablist" aria-label="Who said it">
+        {%- for t in home.praise %}
+        <li><button type="button" role="tab" id="praise-tab-{{ loop.index }}" aria-controls="praise-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" data-praise-tab="{{ loop.index0 }}">{{ t.name }}<span>{{ t.role }}</span></button></li>
+        {%- endfor %}
+      </ul>
+      <div class="praise__panels">
+        {%- for t in home.praise %}
+        <figure class="praise__panel" role="tabpanel" id="praise-panel-{{ loop.index }}" aria-labelledby="praise-tab-{{ loop.index }}"{% if not loop.first %} hidden{% endif %}>
+          <blockquote>“{{ t.quote }}”</blockquote>
+          <figcaption>{{ t.name }}, {{ t.role }}</figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- set sp = home.spotlight %}
+<section class="section section--tight-top" aria-labelledby="spot-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="spot-title" class="section-title" data-split>{{ sp.title }}</h2>
+      <p class="section-head__text" data-reveal>{{ sp.text }}</p>
+      <a class="link-arrow" href="/exhibitions/">Exhibitions and press</a>
+    </header>
+    <div class="spotlight">
+      <ul class="exh-list">
+        {%- for e in (exhibitions.items | byDate | limit(4)) %}
+        <li data-reveal>
+          <a href="/exhibitions/#{{ e.title | slugify }}">
+            <span class="exh-list__year">{{ e.start | date("year") }}</span>
+            <span class="exh-list__title">{{ e.title }}<span>{{ e.subtitle }} · {{ e.venue }}, {{ e.city }}</span></span>
+            <span class="exh-list__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- set f = sp.feature %}
+      <article class="feature-card" data-reveal>
+        <a href="{{ f.link }}" target="_blank" rel="noopener" class="feature-card__image">{% image f.image, f.image_alt, "(min-width: 900px) 35vw, 100vw", "", "lazy", "media--zoom" %}</a>
+        <p class="eyebrow">{{ f.label }}</p>
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.text }}</p>
+        <a class="link-arrow" href="{{ f.link }}" target="_blank" rel="noopener">{{ f.link_label }}</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{%- set pr = home.prints %}
+<section class="section band band--lace" aria-labelledby="prints-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="prints-title" class="section-title" data-split>{{ pr.title }}</h2>
+      <p class="section-head__text" data-reveal>{{ pr.text }}</p>
+      <a class="link-arrow" href="/prints/">View all prints</a>
+    </header>
+    <div class="print-grid">
+      {%- for s in prints.series %}{% for it in s.items | limit(2) %}
+      {%- include "partials/print-card.njk" %}
+      {%- endfor %}{% endfor %}
+    </div>
+    <p class="impact-note" data-reveal>{{ pr.note }}</p>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+{%- set pageTitle = (seo_title or (title + " | " + site.full_name if title else site.full_name + " | Fine art and documentary photographer, London")) -%}
+{%- set pageDesc = (seo_description or description or site.description) | striptags -%}
+{%- set shareImage = (og_image or cover or site.og_image) -%}
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDesc }}">
+  <link rel="canonical" href="{{ page.url | absolute(site.url) }}">
+  {%- if noindex %}<meta name="robots" content="noindex">{% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.full_name }}">
+  <meta property="og:title" content="{{ title or site.full_name }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:url" content="{{ page.url | absolute(site.url) }}">
+  <meta property="og:image" content="{{ shareImage | absolute(site.url) }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#F3EDE5">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/marcellus.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | v }}">
+  <script>
+    // Set before first paint. If the motion script never starts, everything is shown after 2.5 s.
+    (function (r) {
+      r.classList.add("js");
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("motion");
+      setTimeout(function () { r.classList.add("is-loaded"); if (!window.__motion) r.classList.remove("motion"); }, 2500);
+    })(document.documentElement);
+  </script>
+  {%- if page.url == "/" %}
+  <script type="application/ld+json">{{ {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Beatriz Perez",
+    "jobTitle": "Fine art and documentary photographer",
+    "url": site.url,
+    "image": site.url + "/images/about/portrait.jpg",
+    "email": site.email,
+    "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+    "sameAs": [site.instagram, site.linkedin]
+  } | json | safe }}</script>
+  {%- endif %}
+</head>
+<body class="{{ bodyClass }}">
+  <a class="skip" href="#main">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/newsletter.njk" %}
+  {% include "partials/footer.njk" %}
+  {% include "partials/lightbox.njk" %}
+  <script src="{{ '/assets/js/vendor/lenis.min.js' | v }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | v }}" defer></script>
+</body>
+</html>

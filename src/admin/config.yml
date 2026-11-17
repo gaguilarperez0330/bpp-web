@@ -1,0 +1,309 @@
+# Decap CMS · content manager for Beatriz Perez Photography
+# Sign in at https://<site>/admin/ with a GitHub account that has access to the repository.
+# Setup steps are in README.md ("Content manager").
+
+backend:
+  name: github
+  repo: gaguilarperez03/web-beatriz-perez   # change once the GitHub repository exists
+  branch: main
+
+# Drafts → In review → Ready. Each draft opens a pull request and Netlify builds a preview link for it.
+publish_mode: editorial_workflow
+
+# Edit locally without GitHub: run `npm run cms` and `npm start`, then open http://localhost:8081/admin/
+local_backend: true
+
+site_url: https://www.beatrizperezphotography.com
+display_url: https://www.beatrizperezphotography.com
+logo_url: /assets/favicon.svg
+locale: en
+
+media_folder: src/images/uploads
+public_folder: /images/uploads
+
+collections:
+
+  # ---------------------------------------------------------------- Projects
+  - name: projects
+    label: Projects
+    label_singular: Project
+    description: Each photography project has its own page. "Order" sets the sequence on the Work page and the homepage.
+    folder: src/projects
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    summary: "{{order}} · {{title}} ({{year}})"
+    sortable_fields: [order, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Translation, name: translation, widget: string, required: false, hint: "e.g. Clothed Body, Naked Soul" }
+      - { label: Order, name: order, widget: number, value_type: int, default: 9 }
+      - { label: Year, name: year, widget: string }
+      - { label: Kind of work, name: kind, widget: string, hint: "e.g. Fine art and documentary photography series" }
+      - { label: Summary, name: summary, widget: text, hint: "Two sentences for the homepage and the Work page." }
+      - { label: Cover image (Work page), name: cover, widget: image }
+      - { label: Cover description (alt text), name: cover_alt, widget: string }
+      - { label: Wide image at the top of the project page, name: hero, widget: image }
+      - { label: Wide image description (alt text), name: hero_alt, widget: string }
+      - { label: Wide image focus, name: hero_focus, widget: string, required: false, hint: "Where the crop centres, e.g. 50% 30% (left/right, top/bottom). Keeps faces in frame." }
+      - { label: Opening quote, name: epigraph, widget: text, required: false }
+      - { label: Opening quote author, name: epigraph_author, widget: string, required: false }
+      - { label: Main text, name: body, widget: markdown }
+      - label: Image chapters
+        name: chapters
+        widget: list
+        summary: "{{fields.name}}"
+        hint: "One chapter per archetype or group. Leave the name empty for a single gallery."
+        fields:
+          - { label: Chapter name, name: name, widget: string, required: false }
+          - label: Images
+            name: images
+            widget: list
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Description (alt text), name: alt, widget: string }
+      - label: Homepage images
+        name: home_images
+        widget: list
+        required: false
+        hint: "2, 4 or 5 images shown next to this project on the homepage."
+        fields:
+          - { label: Image, name: src, widget: image }
+          - { label: Description (alt text), name: alt, widget: string }
+          - { label: Label under the image, name: label, widget: string, required: false }
+      - label: Homepage review
+        name: home_review
+        widget: object
+        required: false
+        fields:
+          - { label: Quote, name: quote, widget: text, required: false }
+          - { label: Author, name: author, widget: string, required: false }
+      - label: Credits
+        name: credits
+        widget: list
+        required: false
+        fields: [{ label: Role, name: role, widget: string }, { label: Name, name: name, widget: string }]
+      - label: Reviews
+        name: reviews
+        widget: list
+        required: false
+        fields: [{ label: Quote, name: quote, widget: text }, { label: Author, name: author, widget: string }]
+      - { label: Exhibited at, name: exhibited, widget: list, required: false, field: { label: Exhibition, name: text, widget: string } }
+      - label: Publication features
+        name: features
+        widget: list
+        required: false
+        fields: [{ label: Text, name: text, widget: string }, { label: Link, name: link, widget: string, required: false }]
+      - label: Installation views
+        name: installation
+        widget: list
+        required: false
+        fields: [{ label: Image, name: src, widget: image }, { label: Description, name: alt, widget: string }]
+      - { label: SEO description, name: seo_description, widget: text, required: false }
+      - { label: Hide from site, name: draft, widget: boolean, default: false, required: false }
+
+  # ---------------------------------------------------------------- Pages and lists
+  - name: pages
+    label: Pages
+    files:
+      - label: Homepage
+        name: home
+        file: src/_data/home.json
+        fields:
+          - label: Opening
+            name: hero
+            widget: object
+            fields:
+              - { label: Small line above, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string, hint: "Wrap a word in *asterisks* to set it in italics." }
+              - { label: Text, name: text, widget: text }
+              - { label: Image, name: image, widget: image }
+              - { label: Image description (alt text), name: image_alt, widget: string }
+              - { label: Image focus, name: image_focus, widget: string, required: false }
+              - { label: Caption, name: caption, widget: string }
+          - { label: Projects title, name: projects_title, widget: string }
+          - { label: Projects text, name: projects_text, widget: text }
+          - label: About
+            name: about
+            widget: object
+            fields:
+              - { label: Greeting, name: hello, widget: string }
+              - { label: Three lines, name: lines, widget: list }
+              - { label: Text, name: text, widget: text }
+              - { label: Portrait, name: image, widget: image }
+              - { label: Portrait description, name: image_alt, widget: string }
+              - { label: Facts, name: facts, widget: list, fields: [{ label: Label, name: label, widget: string }, { label: Value, name: value, widget: string }] }
+          - label: Praise
+            name: praise
+            widget: list
+            fields: [{ label: Quote, name: quote, widget: text }, { label: Name, name: name, widget: string }, { label: Role, name: role, widget: string }]
+          - label: In the spotlight
+            name: spotlight
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
+              - label: Feature
+                name: feature
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image }
+                  - { label: Image description, name: image_alt, widget: string }
+                  - { label: Small label, name: label, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Link, name: link, widget: string }
+                  - { label: Link text, name: link_label, widget: string }
+          - label: Prints
+            name: prints
+            widget: object
+            fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }, { label: Note, name: note, widget: text }]
+
+      - label: Exhibitions
+        name: exhibitions
+        file: src/_data/exhibitions.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Closing quote, name: quote, widget: object, fields: [{ label: Text, name: text, widget: text }, { label: Author, name: author, widget: string }] }
+          - label: Exhibitions
+            name: items
+            widget: list
+            summary: "{{fields.start}} · {{fields.title}}"
+            hint: "Newest first is automatic. 'On now' and 'Coming soon' labels appear from the dates."
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Venue, name: venue, widget: string }
+              - { label: City, name: city, widget: string }
+              - { label: Opens, name: start, widget: datetime, format: "YYYY-MM-DD", date_format: "DD MMM YYYY", time_format: false }
+              - { label: Closes, name: end, widget: datetime, format: "YYYY-MM-DD", date_format: "DD MMM YYYY", time_format: false, required: false }
+              - { label: Poster or photo, name: image, widget: image }
+              - { label: Text, name: text, widget: text }
+              - { label: Link to the project shown, name: project, widget: string, required: false, hint: "e.g. /photography-projects/misshapes/" }
+
+      - label: Press
+        name: press
+        file: src/_data/press.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Closing quote, name: quote, widget: object, fields: [{ label: Text, name: text, widget: text }, { label: Author, name: author, widget: string }] }
+          - label: Groups
+            name: groups
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Group name, name: name, widget: string }
+              - label: Entries
+                name: items
+                widget: list
+                summary: "{{fields.title}} · {{fields.source}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Publication or organisation, name: source, widget: string }
+                  - { label: Date or issue, name: date, widget: string, required: false }
+                  - { label: Short text, name: text, widget: text, required: false }
+                  - { label: Tearsheet, name: image, widget: image }
+                  - { label: Link or PDF, name: link, widget: string, required: false }
+
+      - label: Prints
+        name: prints
+        file: src/_data/prints.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Second paragraph, name: intro_2, widget: text }
+          - { label: Impact note, name: impact, widget: text }
+          - { label: Enquiry line, name: enquiry, widget: string }
+          - { label: Closing quote, name: quote, widget: object, fields: [{ label: Text, name: text, widget: text }, { label: Author, name: author, widget: string }] }
+          - label: Series
+            name: series
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Series name, name: name, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Project page, name: project, widget: string }
+              - label: Prints
+                name: items
+                widget: list
+                summary: "{{fields.title}}, {{fields.year}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Year, name: year, widget: string }
+                  - { label: Image, name: image, widget: image }
+                  - { label: Description (alt text), name: alt, widget: string }
+                  - { label: Paper, name: paper, widget: string }
+                  - { label: Edition, name: edition, widget: string }
+                  - { label: Size, name: size, widget: string }
+                  - { label: Availability, name: status, widget: string }
+
+      - label: About
+        name: about
+        file: src/_data/about.json
+        fields:
+          - { label: Greeting, name: hello, widget: string }
+          - { label: Three lines, name: lines, widget: list }
+          - { label: Lead, name: lead, widget: text }
+          - { label: Portrait, name: image, widget: image }
+          - { label: Portrait description, name: image_alt, widget: string }
+          - label: Sections
+            name: sections
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Highlighted sentence, name: pull, widget: string, required: false }
+              - { label: Text, name: text, widget: markdown }
+              - { label: Link, name: link, widget: string, required: false }
+              - { label: Link text, name: link_label, widget: string, required: false }
+          - { label: Closing quote, name: quote, widget: object, fields: [{ label: Text, name: text, widget: text }, { label: Author, name: author, widget: string }] }
+
+      - label: CV
+        name: cv
+        file: src/_data/cv.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: CV PDF, name: pdf, widget: file }
+          - { label: Biography, name: biography, widget: markdown }
+          - { label: Statement, name: statement, widget: markdown }
+          - label: Lists
+            name: lists
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Heading, name: name, widget: string }
+              - { label: Entries, name: items, widget: list, summary: "{{fields.year}} · {{fields.text}}", fields: [{ label: Year, name: year, widget: string, required: false }, { label: Text, name: text, widget: text }] }
+          - { label: Closing quote, name: quote, widget: object, fields: [{ label: Text, name: text, widget: text }, { label: Author, name: author, widget: string }] }
+
+      - label: Contact
+        name: contact
+        file: src/_data/contact.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - { label: Text, name: text, widget: text }
+          - { label: Thank-you line, name: thanks, widget: string }
+          - { label: Closing quote, name: quote, widget: object, fields: [{ label: Text, name: text, widget: text }, { label: Author, name: author, widget: string }] }
+
+      - label: Site settings
+        name: site
+        file: src/_data/site.json
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Full name, name: full_name, widget: string }
+          - { label: Role, name: role, widget: string }
+          - { label: Address of the site, name: url, widget: string }
+          - { label: Description for search engines, name: description, widget: text }
+          - { label: Image when shared, name: og_image, widget: image }
+          - { label: Email, name: email, widget: string }
+          - { label: Instagram link, name: instagram, widget: string }
+          - { label: Instagram handle, name: instagram_handle, widget: string }
+          - { label: LinkedIn link, name: linkedin, widget: string }
+          - { label: Menu, name: nav, widget: list, fields: [{ label: Label, name: label, widget: string }, { label: Link, name: url, widget: string }] }
+          - { label: Newsletter, name: newsletter, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }] }
+          - { label: Default closing quote, name: footer_quote, widget: object, fields: [{ label: Text, name: text, widget: text }, { label: Author, name: author, widget: string }] }
+          - { label: Trees planted line, name: trees, widget: string }

@@ -1,0 +1,162 @@
+{
+  "title": "Exhibitions",
+  "intro": "Exhibitions, festivals and public presentations featuring the photographic work of Beatriz Perez. For a full exhibition history, see the CV.",
+  "quote": { "text": "The exhibition remains the primary place to encounter art.", "author": "Jens Hoffmann, curator and writer, in Show Time, 2017 edition" },
+  "items": [
+    {
+      "title": "Mujeres",
+      "subtitle": "International Photography Exhibition, Paris Photo Off",
+      "venue": "Galerie Joseph Le Palais",
+      "city": "Paris",
+      "start": "2025-11-14",
+      "end": "2025-11-16",
+      "image": "/images/exh/mujeres.webp",
+      "text": "ImageNation Paris 2025 at Galerie Joseph Le Palais in the Marais during Paris Photo 2025. Eight international photography exhibitions, including documentary, fine art portraiture and Polaroid, highlight the Latin American female gaze. Presented with the Fotógrafas LATAM collective."
+    },
+    {
+      "title": "SHAPE",
+      "subtitle": "International Photography Exhibition",
+      "venue": "The Glasgow Gallery of Photography",
+      "city": "Glasgow",
+      "start": "2025-09-04",
+      "end": "2025-09-28",
+      "image": "/images/exh/shape.jpg",
+      "text": "An international photography exhibition celebrating the rich tapestry of photographic creativity, from local talents to global visionaries."
+    },
+    {
+      "title": "Branches",
+      "subtitle": "ECOFeminism Festival, 2nd edition",
+      "venue": "The Art Pavilion",
+      "city": "London",
+      "start": "2024-03-13",
+      "end": "2024-03-17",
+      "image": "/images/exh/branches.jpg",
+      "text": "A festival to celebrate nature, women and their empowering connection. A selection of MISShapes was shown in the Branches exhibition.",
+      "project": "/photography-projects/misshapes/"
+    },
+    {
+      "title": "TERRA",
+      "subtitle": "Multimedia group exhibition",
+      "venue": "Espacio Gallery",
+      "city": "London",
+      "start": "2022-10-17",
+      "end": "2022-10-23",
+      "image": "/images/exh/terra.jpg",
+      "text": "A multimedia group exhibition in support of our planet, featuring artists addressing climate change through their work: the beauty of nature and its destruction, upcycled materials and sustainable art practices."
+    },
+    {
+      "title": "The Divine Feminine",
+      "subtitle": "Virtual exhibition",
+      "venue": "ART from HEART CIC",
+      "city": "Online",
+      "start": "2022-03-12",
+      "end": "2022-03-31",
+      "image": "/images/exh/divine.jpg",
+      "text": "A virtual exhibition on sacred femininity and the strength found in softness, challenging society’s idea of what it means to be empowered."
+    },
+    {
+      "title": "Utopia",
+      "subtitle": "ECOFeminism Festival",
+      "venue": "The Art Pavilion",
+      "city": "London",
+      "start": "2021-10-07",
+      "end": "2021-10-07",
+      "image": "/images/exh/utopia.jpg",
+      "text": "A festival to celebrate women, nature and their empowering connection."
+    },
+    {
+      "title": "Voices of Earth",
+      "subtitle": "Virtual exhibition",
+      "venue": "ART from HEART CIC",
+      "city": "Online",
+      "start": "2021-06-12",
+      "end": "2021-07-12",
+      "image": "/images/exh/voices.jpg",
+      "text": "An interdisciplinary group art exhibition celebrating life on Earth."
+    },
+    {
+      "title": "We Grow into the Forest",
+      "subtitle": "Group exhibition",
+      "venue": "The Art Pavilion",
+      "city": "London",
+      "start": "2019-03-14",
+      "end": "2019-03-24",
+      "image": "/images/exh/wgitf.png",
+      "text": "An interdisciplinary group art exhibition inspired by our relationship with nature."
+    },
+    {
+      "title": "Leytonstone Arts Trail",
+      "subtitle": "Sources of Inspiration, 10th anniversary",
+      "venue": "St John’s Church",
+      "city": "London",
+      "start": "2018-07-07",
+      "end": "2018-07-15",
+      "image": "/images/exh/leytonstone.png",
+      "text": "The Sources of Inspiration exhibition, part of the Leytonstone Arts Trail’s 10th anniversary."
+    },
+    {
+      "title": "In Einem Fernen, Fernen Land",
+      "subtitle": "Touring group exhibition",
+      "venue": "Deutsches Märchen- und Wesersagenmuseum",
+      "city": "Bad Oeynhausen, Germany",
+      "start": "2018-04-29",
+      "end": "2018-09-16",
+      "image": "/images/exh/fernen.jpg",
+      "text": "In a Country Far, Far Away travelled to the Fairy Tale and Legend Museum in Bad Oeynhausen, uniting cultures through stories.",
+      "project": "/photography-projects/the-weeping-woman/"
+    },
+    {
+      "title": "In a Country Far, Far Away",
+      "subtitle": "Cross-border group exhibition",
+      "venue": "The Art Pavilion",
+      "city": "London",
+      "start": "2018-03-01",
+      "end": "2018-03-17",
+      "image": "/images/exh/far-away.jpg",
+      "text": "A cross-border group exhibition inspired by fairy tales, myths and legends from countries in war and crisis.",
+      "project": "/photography-projects/the-weeping-woman/"
+    },
+    {
+      "title": "Colour Assembly",
+      "subtitle": "Pop-up exhibition",
+      "venue": "18 Malden Road",
+      "city": "London",
+      "start": "2017-01-10",
+      "end": "2017-01-21",
+      "image": "/images/exh/colour.jpg",
+      "text": "Contemporary artists address the subject of colour in a Camden pop-up exhibition.",
+      "project": "/photography-projects/misshapes/"
+    },
+    {
+      "title": "Testbed: Market to Market",
+      "subtitle": "Artists’ Studio salon",
+      "venue": "Camden Arts Centre",
+      "city": "London",
+      "start": "2016-11-26",
+      "end": "2016-11-27",
+      "image": "/images/exh/testbed.jpg",
+      "text": "The Front of House team’s collaborative project: a series of interventions in local street markets, presented in the Artists’ Studio."
+    },
+    {
+      "title": "MAPS Degree Show",
+      "subtitle": "MA Photographic Studies",
+      "venue": "Ambika P3",
+      "city": "London",
+      "start": "2013-09-03",
+      "end": "2013-09-08",
+      "image": "/images/exh/maps.jpg",
+      "text": "27 exhibitors from 17 countries, curated and designed by Dr Elizabeth Upper, University of Cambridge.",
+      "project": "/photography-projects/misshapes/"
+    },
+    {
+      "title": "Renaissance Photography Prize",
+      "subtitle": "Shortlisted, Disorientation category",
+      "venue": "Mall Galleries",
+      "city": "London",
+      "start": "2012-06-11",
+      "end": "2012-06-16",
+      "image": "/images/exh/renaissance.jpg",
+      "text": "An international photography competition raising money to support younger women with breast cancer."
+    }
+  ]
+}

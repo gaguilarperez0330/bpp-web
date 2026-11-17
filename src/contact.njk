@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+title: Contact
+permalink: /contact/
+quoteFrom: contact
+hideNewsletter: true
+seo_description: Contact the photographer Beatriz Perez for print acquisitions, editorial features, photography commissions and creative collaborations.
+---
+<section class="contact wrap">
+  <div class="contact__text">
+    <p class="eyebrow" data-reveal>{{ contact.subtitle }}</p>
+    <h1 class="page-title" data-split>{{ contact.title }}<span class="punctum">.</span></h1>
+    <p class="lead" data-reveal>{{ contact.text }} <a href="/prints/">Explore the prints</a>.</p>
+    <dl class="facts" data-reveal>
+      <div><dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="{{ site.instagram }}" target="_blank" rel="noopener">{{ site.instagram_handle }}</a></dd></div>
+      <div><dt>Based in</dt><dd>London</dd></div>
+    </dl>
+    <p data-reveal>{{ contact.thanks }}</p>
+  </div>
+  <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company" action="/thank-you/" data-reveal>
+    <input type="hidden" name="form-name" value="contact">
+    <p class="visually-hidden"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+    <div class="form__row">
+      <label for="c-first">First name<input id="c-first" name="first_name" required autocomplete="given-name"></label>
+      <label for="c-last">Last name<input id="c-last" name="last_name" required autocomplete="family-name"></label>
+    </div>
+    <label for="c-email">Email<input id="c-email" type="email" name="email" required autocomplete="email"></label>
+    <label for="c-topic">About
+      <select id="c-topic" name="topic">
+        <option>Print acquisition</option>
+        <option>Commission</option>
+        <option>Collaboration</option>
+        <option>Press or editorial</option>
+        <option>Something else</option>
+      </select>
+    </label>
+    <label for="c-message">Message<textarea id="c-message" name="message" rows="6" required></textarea></label>
+    <p class="form__note">Your details are only used to reply to your message.</p>
+    <button class="btn btn--solid" type="submit">Send</button>
+  </form>
+</section>
